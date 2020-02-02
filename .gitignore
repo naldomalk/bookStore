@@ -1,0 +1,2 @@
+node_modules/*
+app/Http/Models/fakeDB.php
