@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -25,22 +24,26 @@ class BooksController extends Controller
         return $result; 
     }
 
-    public function getOne()
+    public function getOne(Request $request, $id)
     {
-        $db = new fakeDB();
-        $id = "1001"; //TEMP
+        $db     = new fakeDB();
+        $result = [];
 
         $data = $db->books();
         $data = $data[array_search($id, array_column($data, 'isbn'))];
-        
-        $model = 'App\Http\Models\Book'.$data['type'];
-        $model = new $model;
-        
-        $model->set($data);
+        //$model = 'App\Http\Models\Book'.$data['type'];
+        //$model = new $model;
 
-        $result = $model->output();
+        //$model->set($data);
 
-        return $result;
+        return $data;
+    }
+
+    public function csv()
+    {
+        $request = new Request;
+
+        $csv = array_map('str_getcsv', file('data.csv'));
     }
 
     public function create()
