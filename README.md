@@ -1,11 +1,17 @@
 # bookStore
 Simple system development exercise in PHP with Laravel, HTML, JavaScript and no database.
 
-"" 1 Configuration
+## 1. Requirements
+- PHP 7.2
+- Composer
+- Laravel
 
-### 1.1 Install PHP 7.2
+## 2. New Configuration
 
-### 1.2 Install Composer
+### 2.1 Install PHP 7.2
+Download installer: https://www.php.net/downloads
+
+### 2.2 Install Composer
 #### Linux
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -16,12 +22,12 @@ php -r "unlink('composer-setup.php');"
 #### Windows
 Donwload installer: https://getcomposer.org/Composer-Setup.exe
 
-#### 1.3 Install Laravel Framework
+#### 2.3 Install Laravel Framework
 ```
 composer global require laravel/installer
 ```
 
-#### 1.4 Create Laravel Project
+#### 2.4 Create Laravel Project
 ```
 laravel new bookStore
 ```
