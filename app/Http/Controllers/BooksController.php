@@ -31,10 +31,11 @@ class BooksController extends Controller
 
         $data = $db->books();
         $data = $data[array_search($id, array_column($data, 'isbn'))];
-        //$model = 'App\Http\Models\Book'.$data['type'];
-        //$model = new $model;
+        
+        $model = 'App\Http\Models\Book'.str_replace('Book','',$value['type']);
+        $model = new $model;
 
-        //$model->set($data);
+        $model->set($data);
 
         return $data;
     }
