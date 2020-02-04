@@ -1,14 +1,14 @@
 # bookStore
-Simple system development exercise in PHP with Laravel, HTML, JavaScript and no database.
+Simple system development exercise in PHP with Laravel, HTML, CSS, JavaScript and no database.
 
 ## 1. Requirements
-- PHP 7.2
+- PHP >= 7.2
 - Composer
 - Laravel
 
 ## 2. New Configuration
 
-### 2.1 Install PHP 7.2
+### 2.1 Install PHP 7.2 or >
 Download installer: https://www.php.net/downloads
 
 ### 2.2 Install Composer
@@ -26,11 +26,24 @@ Donwload installer: https://getcomposer.org/Composer-Setup.exe
 ```
 composer global require laravel/installer
 ```
+Documentation: https://laravel.com/docs/6.x
 
 #### 2.4 Create Laravel Project
 ```
 laravel new bookStore
 ```
+
+#### 2.5 Clone this repository
+```
+https://github.com/naldomalk/bookStore.git
+```
+After cloning, replace the files in project folder.
+
+#### 2.6 Start local development server
+```
+php artisan serve
+```
+
 ### 3. API Explorer
 - GET / => frontEnd View
 - GET /status => get api status
