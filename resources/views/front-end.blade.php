@@ -30,24 +30,26 @@
                 for(let book of books) {
                     let authors = ['', book.authors]
                     
-                    result += ` <tr><td>€ ${book.price} / ${book.discountPrice}</td>
+                    result += ` <tr><td>€ </td>
+                                    <td align="right">${book.price}</td>
+                                    <td align="left">/ ${book.discountPrice}</td>
                                     <td>${book.title}</td>
                                     <td>${authors[displayAuthors & 1]}</td>
-                                    <td><button onclick="basketAdd(${book.isbn})">Add</button></td>
+                                    <td><button onclick="basketAdd('${book.type}','${book.isbn}')">Add</button></td>
                                 </tr>`                    
                 }
 
                 document.getElementById("page").innerHTML = `<table>${result}</table>`
             }
 
-            function basketAdd(isbn){
-                books.find((a) => a.isbn == isbn).basket++
+            function basketAdd(type, isbn){
+                books.find((a) => a.type == type && a.isbn == isbn).basket++
 
                 basket()
             }
 
-            function basketRemove(isbn){
-                books.find((a) => a.isbn == isbn).basket--
+            function basketRemove(type, isbn){
+                books.find((a) => a.type == type && a.isbn == isbn).basket--
 
                 basket()
             }
@@ -66,11 +68,13 @@
                 for(let book of basket) {
                     let authors = ['', book.authors]
 
-                    result += ` <tr><td>€ ${book.price} / ${book.discountPrice}</td>
+                    result += ` <tr><td>€</td>
+                                    <td align="right">${book.price}</td>
+                                    <td align="left">/ ${book.discountPrice}</td>
                                     <td>${book.title}</td>
                                     <td>${authors[displayAuthors & 1]}</td>
                                     <td>Qty ${book.basket}</td>
-                                    <td><button onclick="basketRemove(${book.isbn})">Remove</button></td>
+                                    <td><button onclick="basketRemove('${book.type}','${book.isbn}')">Remove</button></td>
                                 </tr>`
                 }
 

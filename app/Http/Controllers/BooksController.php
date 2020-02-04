@@ -13,7 +13,7 @@ class BooksController extends Controller
         $result = [];
 
         foreach ($data as $key => $value) {
-            $model = 'App\Http\Models\Book'.$value['type'];
+            $model = 'App\Http\Models\Book'.str_replace('Book','',$value['type']);
             $model = new $model;
             
             $model->set($data[$key]);
