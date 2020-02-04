@@ -31,3 +31,8 @@ composer global require laravel/installer
 ```
 laravel new bookStore
 ```
+### 3. API Explorer
+- GET / => frontEnd View
+- GET /status => get api status
+- GET /api/books => get book list
+- GET /api/books/<isbn> => get unique book
